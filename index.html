@@ -14,32 +14,25 @@
     margin: 0;
   }
   header {
-    position: relative;
     text-align: center;
-    color: #fff;
+    margin-bottom: 40px;
   }
   .hero-image {
     width: 100%;
     height: auto;
     display: block;
   }
-  .hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90%;
-    background: rgba(0,0,0,0.5);
+  .hero-text-below {
+    text-align: center;
     padding: 20px;
-    border-radius: 8px;
   }
-  .hero-text h1 {
+  .hero-text-below h1 {
     font-family: 'Cinzel', serif;
     font-size: 42px;
     margin-bottom: 10px;
     color: #E8DFD0;
   }
-  .hero-text p {
+  .hero-text-below p {
     font-style: italic;
     font-size: 18px;
     color: #C8A951;
@@ -61,6 +54,28 @@
     border-radius: 6px;
     padding: 24px;
     margin-bottom: 30px;
+  }
+  ul { list-style: none; padding: 0; }
+  ul li { margin-bottom: 12px; }
+  .practice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .practice-item strong { color: #C8A951; }
+  .sacred-prayer {
+    text-align: center;
+    border: 1px solid rgba(200,169,81,0.25);
+    border-radius: 8px;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(200,169,81,0.03), rgba(139,26,26,0.03));
+  }
+  .sacred-prayer p { font-style: italic; line-height: 2; }
+  .sacred-prayer .prayer-mantra {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    color: #C0392B;
+    margin-top: 20px;
   }
   footer {
     text-align: center;
@@ -90,9 +105,9 @@
 <header>
   <!-- Imagem hero 100% largura -->
   <img src="baixados.webp" alt="Segunda-feira: Dia de Exu e das Santas Almas" class="hero-image"/>
-  
-  <!-- Texto impactante em 3ª pessoa -->
-  <div class="hero-text">
+
+  <!-- Texto impactante em 3ª pessoa abaixo da imagem -->
+  <div class="hero-text-below">
     <h1>Segunda-feira: Dia de Exu e das Santas Almas</h1>
     <p>Com fé e ancestralidade, inicia-se a semana sob a proteção de Exu e das Santas Almas. Eles abrem caminhos, fortalecem o espírito e trazem equilíbrio para cada jornada.</p>
   </div>
@@ -106,7 +121,65 @@
   </div>
 </section>
 
-<!-- ... demais seções permanecem iguais ... -->
+<section>
+  <h2>Camada II • Regências de Poder</h2>
+  <div class="content-card">
+    <h3>Exu: Senhor dos Caminhos</h3>
+    <ul>
+      <li><strong>Dinamização:</strong> quebra demandas e acelera negócios.</li>
+      <li><strong>Proteção de Linha:</strong> guarda contra inveja e obsessores.</li>
+      <li><strong>Direcionamento:</strong> concede astúcia para oportunidades financeiras.</li>
+    </ul>
+  </div>
+  <div class="content-card">
+    <h3>Santas Almas Benditas</h3>
+    <ul>
+      <li><strong>Sabedoria Ancestral:</strong> oferecem resiliência diante das provações.</li>
+      <li><strong>Causas Impossíveis:</strong> socorrem pedidos de saúde e família.</li>
+      <li><strong>Conforto Espiritual:</strong> limpam dores da alma e acolhem corações aflitos.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Camada III • Liturgia Diária</h2>
+  <div class="content-card practice-grid">
+    <div class="practice-item">
+      <strong>Firmeza de Velas</strong>
+      <p>Vela bicolor (preta e vermelha) para Exu fora de casa, ou vela branca para as Almas em local elevado.</p>
+    </div>
+    <div class="practice-item">
+      <strong>Oferta de Elementos</strong>
+      <p>Copo de água cristalina e café preto sem açúcar para alimentar guias e ancestrais.</p>
+    </div>
+    <div class="practice-item">
+      <strong>Defumação e Descarrego</strong>
+      <p>Queimar alho, guiné ou arruda, direcionando a fumaça para expulsar negatividade.</p>
+    </div>
+    <div class="practice-item">
+      <strong>Manutenção Vibracional</strong>
+      <p>Evitar discussões e reclamações, mantendo pensamentos de vitória.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Camada IV • Conexão Sagrada</h2>
+  <div class="sacred-prayer">
+    <p>"Senhor do Movimento e das Sete Encruzilhadas, mestre da sabedoria que liberta, limpa os meus caminhos.<br>
+    Que vossos olhos enxerguem as armadilhas antes que meus pés as alcancem.<br>
+    Santas Almas benditas, cubram meu lar de paz e providência.<br>
+    Que a força do recomeço transforme escassez em fartura e treva em claridade.<br>
+    Laroyé, Exu! Adorei as Almas!"</p>
+    <div class="prayer-mantra">Assim Seja. Axé.</div>
+  </div>
+</section>
+
+<section>
+  <h2>Alinhamento Supremo</h2>
+  <p style="text-align:center;">Caminhos Abertos, Destino Protegido<br>
+  Que a sabedoria das Almas e a força de Exu guiem e guardem cada passo da sua jornada.</p>
+</section>
 
 <footer>
   <p>Instagram: <a href="https://instagram.com/fra_umbandaoxum" target="_blank">@fra_umbandaoxum</a></p>
