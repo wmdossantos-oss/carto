@@ -6,174 +6,387 @@
 <title>Segunda-feira: Dia de Exú e das Santas Almas</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
 <style>
+  *, *::before, *::after { box-sizing: border-box; }
+
   body {
     font-family: 'EB Garamond', Georgia, serif;
     background: #1A1208;
     color: #E8DFD0;
-    line-height: 1.6;
+    line-height: 1.7;
     margin: 0;
+    padding: 0;
   }
+
+  /* ── HERO ── */
   header {
     text-align: center;
-    margin-bottom: 40px;
   }
+
   .hero-image {
     width: 100%;
     height: auto;
     display: block;
   }
+
   .hero-text-below {
-    text-align: center;
-    padding: 20px;
+    padding: 40px 24px 20px;
   }
+
   .hero-text-below h1 {
     font-family: 'Cinzel', serif;
-    font-size: 42px;
-    margin-bottom: 10px;
+    font-size: clamp(26px, 5vw, 42px);
+    margin: 0 0 12px;
     color: #E8DFD0;
+    letter-spacing: 0.04em;
   }
-  .hero-text-below p {
+
+  .hero-subtitle-main {
     font-style: italic;
     font-size: 18px;
     color: #C8A951;
+    margin: 0 0 32px;
   }
-  .action-text {
-    margin-top: 20px;
-    font-family: 'Cinzel', serif;
-    font-size: 20px;
+
+  /* ── INTRO TEXT BLOCK ── */
+  .intro-block {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .intro-block p {
+    font-size: 17px;
+    margin-bottom: 18px;
+    color: #E8DFD0;
+  }
+
+  .intro-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px;
+  }
+
+  .intro-block ul li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    font-size: 17px;
+    color: #E8DFD0;
+  }
+
+  .intro-block ul li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
     color: #C8A951;
-    text-align: center;
-    line-height: 1.8;
+    font-size: 12px;
+    top: 9px;
   }
-  section, footer {
+
+  .hero-highlight {
+    margin-top: 24px;
+    padding: 16px 20px;
+    border-left: 3px solid #C8A951;
+    background: rgba(200,169,81,0.06);
+    border-radius: 0 4px 4px 0;
+    font-size: 17px;
+    color: #C8A951;
+  }
+
+  /* ── AUTHOR TAG ── */
+  .author-tag {
+    margin-top: 32px;
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    color: #C8A951;
+    line-height: 2;
+    text-align: center;
+  }
+
+  .author-tag a {
+    color: #C8A951;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(200,169,81,0.4);
+    transition: border-color 0.2s;
+  }
+  .author-tag a:hover { border-color: #C8A951; }
+
+  /* ── SECTIONS ── */
+  section {
     padding: 60px 24px;
     max-width: 950px;
-    margin: auto;
+    margin: 0 auto;
   }
+
   h2 {
     font-family: 'Cinzel', serif;
-    font-size: 32px;
+    font-size: clamp(22px, 3.5vw, 32px);
     color: #E8DFD0;
-    margin-bottom: 20px;
+    margin: 0 0 24px;
+    letter-spacing: 0.03em;
   }
+
+  h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    color: #C8A951;
+    margin: 0 0 14px;
+  }
+
+  /* ── CARDS ── */
   .content-card {
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(200,169,81,0.18);
     border-radius: 6px;
-    padding: 24px;
-    margin-bottom: 30px;
+    padding: 28px;
+    margin-bottom: 24px;
   }
-  ul { list-style: none; padding: 0; }
-  ul li { margin-bottom: 12px; }
+
+  .content-card p {
+    margin: 0 0 14px;
+    font-size: 17px;
+  }
+  .content-card p:last-child { margin-bottom: 0; }
+
+  .content-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .content-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(200,169,81,0.08);
+    font-size: 17px;
+  }
+  .content-card ul li:last-child { border-bottom: none; }
+
+  .content-card ul li strong { color: #C8A951; }
+
+  /* ── PRÁTICAS GRID ── */
   .practice-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
-  .practice-item strong { color: #C8A951; }
+
+  @media (max-width: 600px) {
+    .practice-grid { grid-template-columns: 1fr; }
+  }
+
+  .practice-item {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(200,169,81,0.18);
+    border-radius: 6px;
+    padding: 20px;
+  }
+
+  .practice-item strong {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    color: #C8A951;
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .practice-item p {
+    margin: 0;
+    font-size: 16px;
+    color: #E8DFD0;
+  }
+
+  /* ── ORAÇÃO ── */
   .sacred-prayer {
     text-align: center;
     border: 1px solid rgba(200,169,81,0.25);
     border-radius: 8px;
-    padding: 40px;
-    background: linear-gradient(135deg, rgba(200,169,81,0.03), rgba(139,26,26,0.03));
+    padding: 48px 32px;
+    background: linear-gradient(135deg, rgba(200,169,81,0.04), rgba(139,26,26,0.04));
   }
-  .sacred-prayer p { font-style: italic; line-height: 2; }
-  .sacred-prayer .prayer-mantra {
-    font-family: 'Cinzel', serif;
-    font-size: 24px;
-    color: #C0392B;
-    margin-top: 20px;
-  }
-  footer {
-    text-align: center;
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(200,169,81,0.5);
-    border-top: 1px solid rgba(200,169,81,0.1);
-    background: #0f0a05;
-    padding: 40px 24px;
-  }
-  footer p {
-    margin: 8px 0;
-    font-size: 14px;
-    letter-spacing: normal;
-    text-transform: none;
+
+  .sacred-prayer p {
+    font-style: italic;
+    font-size: 18px;
+    line-height: 2.1;
+    margin: 0 0 24px;
     color: #E8DFD0;
   }
-  footer a {
+
+  .prayer-mantra {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    color: #C0392B;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── ALINHAMENTO SUPREMO ── */
+  .alignment-block {
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
     color: #C8A951;
+    line-height: 2;
+  }
+
+  /* ── DIVISOR ── */
+  .section-divider {
+    width: 60px;
+    height: 1px;
+    background: rgba(200,169,81,0.35);
+    margin: 0 auto 40px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    background: #0f0a05;
+    border-top: 1px solid rgba(200,169,81,0.1);
+    padding: 48px 24px;
+  }
+
+  .footer-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .footer-brand {
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    color: #C8A951;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .footer-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #E8DFD0;
     text-decoration: none;
+    font-size: 15px;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: #C8A951; }
+
+  .footer-links a svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .footer-copy {
+    font-size: 13px;
+    color: rgba(200,169,81,0.45);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── WHATSAPP FLOATING BUTTON ── */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 12px 20px 12px 14px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.45);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .whatsapp-float:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(37,211,102,0.4);
+  }
+
+  .whatsapp-float svg {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 480px) {
+    .whatsapp-float { bottom: 18px; right: 18px; padding: 11px 16px 11px 12px; font-size: 14px; }
   }
 </style>
 </head>
 <body>
 
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
 <header>
-  <!-- Imagem hero 100% largura -->
   <img src="cigana.webp" alt="Segunda-feira: Dia de Exú e das Santas Almas" class="hero-image"/>
 
-  <!-- Texto impactante em 3ª pessoa abaixo da imagem -->
   <div class="hero-text-below">
     <h1>Segunda-feira: Dia de Exu e das Santas Almas</h1>
-    <p>Com fé e ancestralidade, inicia-se a semana sob a proteção de Exu e das Santas Almas. Eles abrem caminhos, fortalecem o espírito e trazem equilíbrio para cada jornada.</p>
+    <p class="hero-subtitle-main">Com fé e ancestralidade, inicia-se a semana sob a proteção de Exu e das Santas Almas. Eles abrem caminhos, fortalecem o espírito e trazem equilíbrio para cada jornada.</p>
 
-    <!-- Texto estilo action centralizado -->
-    <div class="action-text
+    <div class="intro-block">
+      <p>Segunda-feira é um dia dedicado à reflexão, à fé e ao fortalecimento espiritual. Sob a proteção de Exu e das Santas Almas, iniciamos a semana buscando equilíbrio, sabedoria e abertura de caminhos para vencer os desafios da vida.</p>
 
-      <p class="hero-subtitle">
-  Segunda-feira é um dia dedicado à reflexão, à fé e ao fortalecimento espiritual.
-  Sob a proteção de Exu e das Santas Almas, iniciamos a semana buscando equilíbrio,
-  sabedoria e abertura de caminhos para vencer os desafios da vida.
-</p>
+      <p>Quando cultivamos respeito, gratidão e confiança, os bons trabalhos espirituais produzem frutos que vão além do material. Eles trazem serenidade para a mente, firmeza para as decisões e leveza para o coração, permitindo que a vida siga seu curso com mais harmonia e propósito.</p>
 
-<p>
-  Quando cultivamos respeito, gratidão e confiança, os bons trabalhos espirituais
-  produzem frutos que vão além do material. Eles trazem serenidade para a mente,
-  firmeza para as decisões e leveza para o coração, permitindo que a vida siga
-  seu curso com mais harmonia e propósito.
-</p>
+      <ul>
+        <li>Paz na alma para enfrentar a semana com tranquilidade.</li>
+        <li>Leveza no coração, afastando preocupações e desgastes.</li>
+        <li>Abertura de caminhos para novas oportunidades e realizações.</li>
+        <li>Proteção espiritual para seguir com segurança e confiança.</li>
+        <li>Prosperidade construída através do trabalho, da fé e da gratidão.</li>
+      </ul>
 
-<ul class="hero-benefits">
-  <li>Paz na alma para enfrentar a semana com tranquilidade.</li>
-  <li>Leveza no coração, afastando preocupações e desgastes.</li>
-  <li>Abertura de caminhos para novas oportunidades e realizações.</li>
-  <li>Proteção espiritual para seguir com segurança e confiança.</li>
-  <li>Prosperidade construída através do trabalho, da fé e da gratidão.</li>
-</ul>
+      <p>Que cada passo seja guiado pela sabedoria, que os obstáculos sejam transformados em aprendizado e que a luz da espiritualidade fortaleça sua caminhada. Exu abre os caminhos para aqueles que seguem com verdade, respeito e fé.</p>
 
-<p>
-  Que cada passo seja guiado pela sabedoria, que os obstáculos sejam transformados
-  em aprendizado e que a luz da espiritualidade fortaleça sua caminhada.
-  Exu abre os caminhos para aqueles que seguem com verdade, respeito e fé.
-</p>
+      <div class="hero-highlight">
+        <strong>Paz, leveza, proteção e caminhos abertos:</strong> os resultados dos bons trabalhos florescem na vida de quem confia, agradece e persevera.
+      </div>
 
-<p class="hero-highlight">
-  <strong>
-    Paz, leveza, proteção e caminhos abertos: os resultados dos bons trabalhos
-    florescem na vida de quem confia, agradece e persevera.
-  </strong>
-</p>
-      
-      Generosidade gera prosperidade e Exú abre portas.<br>
-      Wagner Milanezi<br>
-      27 98137-9340<br>
-      Pix: Caixa
+      <div class="author-tag">
+        Generosidade gera prosperidade e Exu abre portas.<br/>
+        <strong>Wagner Milanezi</strong> &nbsp;·&nbsp; (27) 98137-9340 &nbsp;·&nbsp; Pix: Caixa
+      </div>
     </div>
   </div>
 </header>
 
+<!-- ══════════════════════════════════════════
+     CAMADA I
+══════════════════════════════════════════ -->
 <section>
-  <h2>Camada I • Fundamentos</h2>
+  <h2>Camada I &bull; Fundamentos</h2>
+  <div class="section-divider"></div>
   <div class="content-card">
     <p>A segunda-feira inaugura o movimento cronológico e místico da semana. Nas tradições de terreiro e vertentes sincréticas, este amanhecer evoca a presença imediata de <strong>Exu</strong>, divindade da comunicação e da intersecção entre mundos, junto à egrégora de luz das <strong>Santas Almas</strong> benditas.</p>
     <p>Iniciar o ciclo semanal em sintonia com essas forças cria um escudo contra intempéries, purifica o campo áurico e abre caminhos para o sucesso material e espiritual.</p>
   </div>
 </section>
 
+<!-- ══════════════════════════════════════════
+     CAMADA II
+══════════════════════════════════════════ -->
 <section>
-  <h2>Camada II • Regências de Poder</h2>
+  <h2>Camada II &bull; Regências de Poder</h2>
+  <div class="section-divider"></div>
+
   <div class="content-card">
     <h3>Exu: Senhor dos Caminhos</h3>
     <ul>
@@ -182,6 +395,7 @@
       <li><strong>Direcionamento:</strong> concede astúcia para oportunidades financeiras.</li>
     </ul>
   </div>
+
   <div class="content-card">
     <h3>Santas Almas Benditas</h3>
     <ul>
@@ -192,9 +406,13 @@
   </div>
 </section>
 
+<!-- ══════════════════════════════════════════
+     CAMADA III
+══════════════════════════════════════════ -->
 <section>
-  <h2>Camada III • Liturgia Diária</h2>
-  <div class="content-card practice-grid">
+  <h2>Camada III &bull; Liturgia Diária</h2>
+  <div class="section-divider"></div>
+  <div class="practice-grid">
     <div class="practice-item">
       <strong>Firmeza de Velas</strong>
       <p>Vela bicolor (preta e vermelha) para Exu fora de casa, ou vela branca para as Almas em local elevado.</p>
@@ -214,23 +432,90 @@
   </div>
 </section>
 
+<!-- ══════════════════════════════════════════
+     CAMADA IV
+══════════════════════════════════════════ -->
 <section>
-  <h2>Camada IV • Conexão Sagrada</h2>
+  <h2>Camada IV &bull; Conexão Sagrada</h2>
+  <div class="section-divider"></div>
   <div class="sacred-prayer">
-    <p>"Senhor do Movimento e das Sete Encruzilhadas, mestre da sabedoria que liberta, limpa os meus caminhos.<br>
-    Que vossos olhos enxerguem as armadilhas antes que meus pés as alcancem.<br>
-    Santas Almas benditas, cubram meu lar de paz e providência.<br>
-    Que a força do recomeço transforme escassez em fartura e treva em claridade.<br>
-    Laroyé, Exu! Adorei as Almas!"</p>
+    <p>
+      "Senhor do Movimento e das Sete Encruzilhadas, mestre da sabedoria que liberta, limpa os meus caminhos.<br/>
+      Que vossos olhos enxerguem as armadilhas antes que meus pés as alcancem.<br/>
+      Santas Almas benditas, cubram meu lar de paz e providência.<br/>
+      Que a força do recomeço transforme escassez em fartura e treva em claridade.<br/>
+      Laroyé, Exu! Adorei as Almas!"
+    </p>
     <div class="prayer-mantra">Assim Seja. Axé.</div>
   </div>
 </section>
 
+<!-- ══════════════════════════════════════════
+     ALINHAMENTO SUPREMO
+══════════════════════════════════════════ -->
 <section>
   <h2>Alinhamento Supremo</h2>
-  <p style="text-align:center;">Caminhos Abertos, Destino Protegido<br>
-  Que a sabedoria das Almas e a força de Exu guiem e guardem cada passo da sua jornada.</p>
+  <div class="section-divider"></div>
+  <div class="alignment-block">
+    <p>Caminhos Abertos, Destino Protegido</p>
+    <p>Que a sabedoria das Almas e a força de Exu guiem e guardem cada passo da sua jornada.</p>
+  </div>
 </section>
 
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
 <footer>
-  <p>Instagram: <a href="https://instagram.com/fra_umbandaoxum" target
+  <div class="footer-inner">
+    <div class="footer-brand">Wagner Milanezi</div>
+
+    <div class="footer-links">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/wagmilanezi/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/>
+        </svg>
+        @wagmilanezi
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@fra_oxum" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.05a8.28 8.28 0 004.84 1.55V7.16a4.85 4.85 0 01-1.07-.47z"/>
+        </svg>
+        @fra_oxum
+      </a>
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/5527981379340" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.121 1.523 5.855L.057 23.03a.75.75 0 00.913.913l5.175-1.466A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.744 9.744 0 01-5.07-1.42l-.364-.217-3.773 1.07 1.07-3.772-.217-.364A9.744 9.744 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+        </svg>
+        (27) 98137-9340
+      </a>
+    </div>
+
+    <div class="footer-copy">© 2024 Wagner Milanezi · Pix: Caixa</div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════
+     WHATSAPP FLOATING BUTTON
+══════════════════════════════════════════ -->
+<a href="https://wa.me/5527981379340?text=Olá%2C%20Wagner%21%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações." 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener"
+   aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.121 1.523 5.855L.057 23.03a.75.75 0 00.913.913l5.175-1.466A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.744 9.744 0 01-5.07-1.42l-.364-.217-3.773 1.07 1.07-3.772-.217-.364A9.744 9.744 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+  </svg>
+  Falar no WhatsApp
+</a>
+
+</body>
+</html>
